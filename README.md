@@ -1,2 +1,2 @@
-# starkrecordings
+# Stark Recordings
 Stark Recordings' website
