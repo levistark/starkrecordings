@@ -1,0 +1,48 @@
+#scrollSpy {
+    position: fixed;
+    height: 100vh;
+    left: 6rem;
+
+    z-index: 0;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    a {
+        color: var(--clr-black);
+        text-decoration: none;
+        transition: all 200ms ease-in-out;
+        padding: .5rem 2rem !important;
+        margin: -4px 0;
+
+        &:hover, 
+        &:active {
+            color: var(--clr-link);
+            transform: translateX(2rem);
+        }
+
+        &:active::after,
+        &:hover::after {
+            position: absolute;
+            content: '';
+            font-weight: 600;
+            height: 2px;
+            width: 10px;
+            background-color: var(--clr-orange);
+            left: 0;
+            top: 18px;
+            border-radius: 10px;
+        }
+    }
+
+    &::before {
+        position: absolute;
+        content: '';
+        height: 250px;
+        width: 2px;
+        background-color: var(--clr-orange);
+        border-radius: 10px;
+    }
+
+}

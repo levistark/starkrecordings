@@ -33,7 +33,7 @@
             flex-direction: row;
         }
 
-        .right-container {
+        .left-container {
             display: none;
 
             @include xs {
@@ -52,9 +52,8 @@
                 }
             }
         }
-        
 
-        .left-container {
+        .right-container {
             @include xs {
                 margin-left: 3rem;
             }
@@ -68,7 +67,18 @@
                     color: var(--clr-heading-primary);
                 }
                 @include md {
-                    max-width: 21ch;
+                    max-width: 25ch;
+                }
+                @include md {
+                    max-width: 25ch;
+                }
+                @include xl {
+                    max-width: 25ch;
+                    font-size: 35pt;
+                }
+                @include xxl {
+                    max-width: 25ch;
+                    font-size: 40pt;
                 }
             }
 
@@ -84,6 +94,7 @@
                         position: relative;
                         text-decoration: none;
                         transition: 0.2s;
+                        font-weight: 600;
                     }
                     @include md {
                         display: grid;
@@ -91,9 +102,8 @@
                         row-gap: 1rem;
 
                         a {
-                            padding: 0 0.5rem;
-                            border-left: solid 1.5px var(--clr-border-primary);
-                            padding: 0 1rem;
+                            border-left: solid 1.5px var(--clr-border-orange);
+                            padding: 0 1.5rem;
 
                             &:hover,
                             &:focus {

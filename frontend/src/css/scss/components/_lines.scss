@@ -4,8 +4,17 @@
     border-style: solid;
 }
 
-.above-content-line {
+.above-content-line-orange {
     @include border;
     border-width: 1px;
     width: 3rem;
+    border-color: var(--clr-border-orange);
+
+}
+
+.above-content-line-blue {
+    @include border;
+    border-width: 1px;
+    width: 3rem;
+    border-color: var(--clr-border-blue);
 }

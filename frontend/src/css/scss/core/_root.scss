@@ -5,8 +5,10 @@
     --clr-white: white;
     --clr-white-secondary: #fbfbfa;
     --clr-orange: #dd511f;
+    --clr-orange-secondary: #bb4419;
     --clr-blue: #8ccebf;
-    --clr-darkblue: #0e535c;
+    --clr-darkblue: #366459;
+    --clr-blue-secondary: #8ccebf;
     --clr-danger: #EF4444;
     --clr-success: #22C55E;
     --clr-warning: #FFBA08;
@@ -44,6 +46,8 @@
     --clr-border-primary: var(--clr-gray-700);
     --clr-border-dark: var(--clr-gray-700);
     --clr-border-gray: #a6a6a6;
+    --clr-border-orange: var(--clr-orange);
+    --clr-border-blue: var(--clr-blue);
 
     // Background colors
     --clr-bg-primary: var(--clr-white);
@@ -56,16 +60,11 @@
     --clr-input-border-focus: var(--clr-text-primary);
 
     // Button colors
-    --clr-btn-orange-bg: var(--clr-orange);
-    --clr-btn-orange-text: var(--clr-white-secondary);
+    --clr-btn-orange: var(--clr-orange);
+    --clr-btn-black: var(--clr-black);
+    --clr-btn-blue: var(--clr-darkblue);
 
-    --clr-btn-black-bg: var(--clr-black-secondary);
-    --clr-btn-black-text: var(--clr-white-secondary);
-
-    --clr-btn-orange-text-hover: var(--clr-white);
-    --clr-btn-orange-bg-hover: var(--clr-black);
-
-    --clr-btn-black-text-hover: var(--clr-white);
-    --clr-btn-black-bg-hover: var(--clr-orange);
+    --clr-btn-text-white: var(--clr-white);
+    --clr-btn-text-black: var(--clr-black);
 
 }

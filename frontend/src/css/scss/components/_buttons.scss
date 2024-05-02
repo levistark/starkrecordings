@@ -14,12 +14,12 @@
 
 .btn-orange { 
     @include button;
-    background: var(--clr-btn-orange-bg);
-    color: var(--clr-btn-orange-text);
+    background: var(--clr-btn-orange);
+    color: var(--clr-btn-text-white);
 
     &:hover {
-        background: var(--clr-btn-orange-bg-hover);
-        color: var(--clr-btn-orange-text-hover);
+        background: var(--clr-btn-blue);
+    color: var(--clr-btn-text-white);
         text-decoration: none;
     } 
 
@@ -36,12 +36,44 @@
 
 .btn-black { 
     @include button;
-    background: var(--clr-btn-black-bg);
-    color: var(--clr-btn-black-text);
+    background: var(--clr-btn-black);
+    color: var(--clr-btn-text-white);
 
     &:hover {
-        background: var(--clr-btn-black-bg-hover);
-        color: var(--clr-btn-black-text-hover);
+        background: var(--clr-btn-orange);
+        color: var(--clr-btn-text-white);
+        text-decoration: none;
+    } 
+
+    @include xs {
+        width: 12rem;
+    }
+}
+
+.btn-black-orange { 
+    @include button;
+    background: var(--clr-btn-black);
+    color: var(--clr-btn-text-white);
+
+    &:hover {
+        background: var(--clr-btn-orange);
+        color: var(--clr-btn-text-white);
+        text-decoration: none;
+    } 
+
+    @include xs {
+        width: 12rem;
+    }
+}
+
+.btn-black-blue { 
+    @include button;
+    background: var(--clr-btn-black);
+    color: var(--clr-btn-text-white);
+
+    &:hover {
+        background: var(--clr-btn-blue);
+        color: var(--clr-btn-text-white);
         text-decoration: none;
     } 
 
