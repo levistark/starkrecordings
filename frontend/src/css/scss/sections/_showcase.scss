@@ -1,0 +1,169 @@
+#showcase {
+    background: var(--clr-bg-dark);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    padding: 3.5rem 0;
+
+    @include xs {
+        background: var(--clr-bg-secondary);
+    }
+    @include md {
+        justify-content: center;
+    }
+
+    #showcase-background-image {
+        position: absolute;
+        filter: brightness(0.5);
+        @include xs {
+            display: none;
+        }
+    }
+
+    .container {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+        position: relative;
+
+        @include xs {
+            flex-direction: row;
+        }
+
+        .right-container {
+            display: none;
+
+            @include xs {
+                display: block;
+                width: 17rem;
+            }
+            @include xl {
+                width: 23rem;
+            }
+            
+            #showcase-image {
+                img {
+                    object-fit: cover;
+                    height: 100%;
+                    width: 100%;
+                }
+            }
+        }
+        
+
+        .left-container {
+            @include xs {
+                margin-left: 3rem;
+            }
+
+            h1 {
+                color: var(--clr-white);
+                max-width: 30ch;
+                margin-top: 2.5rem;
+
+                @include xs {
+                    color: var(--clr-heading-primary);
+                }
+                @include md {
+                    max-width: 21ch;
+                }
+            }
+
+            .showcase-nav-container {
+                margin-top: 1rem;
+                
+                .showcase-nav {
+                    display: none;
+
+                    a {
+                        color: var(--clr-text-primary);
+                        font-size: 11pt;
+                        position: relative;
+                        text-decoration: none;
+                        transition: 0.2s;
+                    }
+                    @include md {
+                        display: grid;
+                        grid-template-columns: 1fr 1fr;
+                        row-gap: 1rem;
+
+                        a {
+                            padding: 0 0.5rem;
+                            border-left: solid 1.5px var(--clr-border-primary);
+                            padding: 0 1rem;
+
+                            &:hover,
+                            &:focus {
+                                border-color: var(--clr-orange);
+                                color: var(--clr-orange);
+                            }
+                        }
+                    }
+ 
+                    @include lg {
+                        display: flex;
+                        align-items: center;
+                        
+                        a {
+                            &:active::after,
+                            &:hover::after {
+                                position: absolute;
+                                content: '';
+                                font-weight: 600;
+                                height: 2px;
+                                width: 20px;
+                                background-color: var(--clr-orange);
+                                left: 45%;
+                                bottom: -15px;
+                            }
+                            &:nth-child(1) {
+                                border-left: none;
+                                padding-left: 0;
+
+                                &:active::after,
+                                &:hover::after {
+                                    left: 30%;
+                                }
+                            }
+
+                            &:nth-child(4) {
+                                &:active::after,
+                                &:hover::after {
+                                    left: 35%;
+                                }
+                            }
+                        }
+                    }
+                    @include xl {
+                        a {
+                            padding: 0 2rem;
+
+                            &:nth-child(1) {
+                                border-left: none;  
+                                padding-left: 0;
+
+                                &:active::after,
+                                &:hover::after {
+                                    left: 20%;
+                                }
+                            }
+
+                            &:nth-child(4) {
+                                &:active::after,
+                                &:hover::after {
+                                    left: 45%;
+                                }
+                            }
+                            @include xxl {
+                                padding: 0 3rem;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

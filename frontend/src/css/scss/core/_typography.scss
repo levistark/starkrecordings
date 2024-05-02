@@ -1,0 +1,72 @@
+@mixin standard-text {
+    line-height: 160%;
+    font-weight: 400;
+    color: var(--clr-text-primary);
+}
+
+@mixin standard-heading {
+    @include standard-text;
+    line-height: 1.5;
+    font-weight: 600;
+    color: var(--clr-heading-primary);
+}
+
+@mixin h1 { 
+    @include standard-heading; 
+    line-height: 1.6;
+    
+    @include xxs { font-size: 26px; }
+    @include xs { font-size: 26px; }
+    @include sm { font-size: 28px; }
+    @include md { font-size: 32px; }
+    @include lg { font-size: 36px; }
+    @include xl { font-size: 40px; }
+    @include xxl { font-size: 42px; }
+}
+@mixin h2 { 
+    @include standard-heading; 
+    
+    @include xxs { font-size: 22px; margin: -15px 0; }
+    @include xs { font-size: 22px; margin: -15px 0; }
+    @include sm { font-size: 24px; margin: -5px 0; }
+    @include md { font-size: 26px; }
+    @include lg { font-size: 28px; }
+    @include xl { font-size: 32px; }
+    @include xxl { font-size: 32px; }
+}
+
+@mixin h3 { 
+    @include standard-heading; 
+ 
+    @include xxs { font-size: 20px; }
+    @include xs { font-size: 20px; }
+    @include sm { font-size: 22px; }
+    @include md { font-size: 24px; }
+    @include lg { font-size: 26px; }
+    @include xl { font-size: 30px; }
+    @include xxl { font-size: 30px; }
+}
+@mixin h4 { @include standard-heading; }
+@mixin h5 { @include standard-heading; }
+@mixin h6 { @include standard-heading; }
+
+h1, .h1 { @include h1; }
+h2, .h2 { @include h2; }
+h3, .h3 { @include h3; }
+h4, .h4 { @include h4; }
+h5, .h5 { @include h5; }
+h6, .h6 { @include h6; }
+
+p { @include standard-text; margin: 0; }
+
+label { @include standard-text; }
+
+span { @include standard-text; }
+
+small { @include standard-text; }
+
+
+  
+
+
+

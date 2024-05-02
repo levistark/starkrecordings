@@ -1,0 +1,42 @@
+#header {
+    display: block;
+
+    @include md {
+        //display: none;
+    }
+    .navbar {
+        background-color: var(--clr-bg-secondary);
+        .container-fluid {
+            #header-logo {
+                img {
+                    display: block;
+                    width: 1.8rem;
+                }
+            }
+            #header-logo-text {
+                img {
+                    display: block;
+                    width: 4rem;
+                }
+            }
+            .navbar-toggler {
+                border: none;
+                margin-right: -5px;
+                .custom-navbar {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+                    gap: 5px;
+                    padding: 6px 0px;
+
+                    div {
+                        width: 20px;
+                        border: 1px solid black;
+                    }
+                }
+                
+            }
+        }
+    }
+}

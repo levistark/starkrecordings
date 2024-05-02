@@ -1,0 +1,11 @@
+@mixin border {
+    border-color: var(--clr-border-dark);
+    border-width: 2px;
+    border-style: solid;
+}
+
+.above-content-line {
+    @include border;
+    border-width: 1px;
+    width: 3rem;
+}

@@ -1,0 +1,16 @@
+.triangle-right {
+	width: 0;
+	height: 0;
+	border-top: 10.5px solid transparent;
+	border-left: 23px solid #555;
+	border-bottom: 10.5px solid transparent;
+    border-left-color: var(--clr-orange);
+    transition: all 0.2s;
+    cursor: pointer;
+    
+    &:hover,
+    &:focus {
+        transform: scale(1.2);
+        border-left-color: var(--clr-black-secondary);
+    } 
+}

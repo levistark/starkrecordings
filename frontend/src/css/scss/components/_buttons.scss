@@ -1,0 +1,52 @@
+@mixin button {
+    border-radius: 6px;
+    border: none;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    transition: 0.2s;
+}
+
+.btn-orange { 
+    @include button;
+    background: var(--clr-btn-orange-bg);
+    color: var(--clr-btn-orange-text);
+
+    &:hover {
+        background: var(--clr-btn-orange-bg-hover);
+        color: var(--clr-btn-orange-text-hover);
+        text-decoration: none;
+    } 
+
+    @include xs {
+        width: 12rem;
+    }
+}
+
+.btn-disabled {
+    @include button;
+    background: var(--clr-gray-200);
+    color: var(--clr-gray-400);
+}
+
+.btn-black { 
+    @include button;
+    background: var(--clr-btn-black-bg);
+    color: var(--clr-btn-black-text);
+
+    &:hover {
+        background: var(--clr-btn-black-bg-hover);
+        color: var(--clr-btn-black-text-hover);
+        text-decoration: none;
+    } 
+
+    @include xs {
+        width: 12rem;
+    }
+}
+

@@ -1,0 +1,12 @@
+#mixing {
+    background: var(--clr-bg-primary);
+    .container {
+        display: flex;
+        flex-direction: column;
+        gap: 2.5rem;
+
+        @include sm {
+            max-width: 70ch;
+        }
+    }
+}

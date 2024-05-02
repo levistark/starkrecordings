@@ -1,0 +1,11 @@
+a {
+    @include standard-text;
+    color: var(--clr-link);
+    text-decoration: none;
+    transition: all 0.2s ease-in-out;
+
+    &:hover {
+        text-decoration: underline;
+        color: var(--clr-link-hover);
+    }
+}

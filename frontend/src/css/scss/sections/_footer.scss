@@ -1,0 +1,36 @@
+footer {
+    background: var(--clr-bg-dark);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 2rem 0;
+    .text-content {
+        max-width: 70ch;
+        text-align: center;
+
+        @include xs {
+            display: flex;
+        }         
+        p {
+            color: var(--clr-text-white);
+            font-size: 11pt;
+            padding: 0 1rem;
+        }
+
+        a {
+            display: block;
+            font-size: 11pt;
+            border-left: 1px solid white;
+            border-right: 1px solid white;
+            padding: 0 1rem;
+        }
+
+        time {
+            display: block;
+            color: var(--clr-text-white);
+            font-size: 11pt;
+            padding: 0 1rem;
+        }
+    }
+}

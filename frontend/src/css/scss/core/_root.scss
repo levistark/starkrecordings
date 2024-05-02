@@ -1,0 +1,71 @@
+:root {
+    // Colors
+    --clr-black: black;
+    --clr-black-secondary:#22201d;
+    --clr-white: white;
+    --clr-white-secondary: #fbfbfa;
+    --clr-orange: #dd511f;
+    --clr-blue: #8ccebf;
+    --clr-darkblue: #0e535c;
+    --clr-danger: #EF4444;
+    --clr-success: #22C55E;
+    --clr-warning: #FFBA08;
+    --clr-gray-100: #F3F6FF;
+    --clr-gray-200: #EFF2FC;
+    --clr-gray-300: #E2E5F1;
+    --clr-gray-400:  #D4D7E5;
+    --clr-gray-500:  #B4B7C9;
+    --clr-gray-600:  #9397AD;
+    --clr-gray-700: #565973;
+    --clr-gray-800: #27293f;
+    --clr-gray-850:  #171722;
+    --clr-gray-900: #0B0F19;
+
+    // Text colors
+    --clr-heading-primary: black;
+    --clr-heading-secondary: #403d38;
+    --clr-heading-white: #fbfbfa;
+    --clr-text-primary: #403d38;
+    --clr-text-secondary: #59564f;
+    --clr-text-white: var(--clr-gray-300);
+    --clr-text-grey: #a6a6a6;
+
+    // Link colors
+    --clr-link: var(--clr-orange);
+    --clr-link-hover: #0a58ca;
+
+    // Fonts and casing
+    --font-sans-serif: "Noto Sans", sans-serif;
+    --body-font-family: var(--font-sans-serif);
+    --body-font-size: 1rem;
+    --body-line-height: 1.5;
+
+    // Border colors
+    --clr-border-primary: var(--clr-gray-700);
+    --clr-border-dark: var(--clr-gray-700);
+    --clr-border-gray: #a6a6a6;
+
+    // Background colors
+    --clr-bg-primary: var(--clr-white);
+    --clr-bg-secondary: var(--clr-white-secondary);
+    --clr-bg-dark: var(--clr-black-secondary);
+
+    // Input colors
+    --clr-input-border:  #a6a6a6;
+    --clr-input-border-hover: var(--clr-orange);
+    --clr-input-border-focus: var(--clr-text-primary);
+
+    // Button colors
+    --clr-btn-orange-bg: var(--clr-orange);
+    --clr-btn-orange-text: var(--clr-white-secondary);
+
+    --clr-btn-black-bg: var(--clr-black-secondary);
+    --clr-btn-black-text: var(--clr-white-secondary);
+
+    --clr-btn-orange-text-hover: var(--clr-white);
+    --clr-btn-orange-bg-hover: var(--clr-black);
+
+    --clr-btn-black-text-hover: var(--clr-white);
+    --clr-btn-black-bg-hover: var(--clr-orange);
+
+}

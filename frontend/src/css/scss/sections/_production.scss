@@ -1,0 +1,12 @@
+#production {
+    background: var(--clr-bg-secondary);
+    .container {
+        display: flex;
+        flex-direction: column;
+        gap: 2.5rem;
+
+        @include sm {
+            max-width: 70ch;
+        }
+    }
+}

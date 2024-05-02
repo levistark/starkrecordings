@@ -1,0 +1,15 @@
+.page-section {
+    padding: 2rem 0;
+
+    @include xs {
+        padding: 3rem 0;
+    }
+    @include lg {
+        padding: 4rem 0;
+    }
+
+    @include xl {
+        padding: 5rem 0;
+    }
+
+}
