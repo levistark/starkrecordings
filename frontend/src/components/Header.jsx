@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from 'react'
+import logo from '../../public/assets/images/logo.webp'
+import logoFallback from '../../public/assets/images/logo.png'
 
 const Header = () => {
     const [scrollState, setScrollState] = useState(0)
@@ -41,8 +43,8 @@ const Header = () => {
             <nav className="navbar fixed-top">
                 <div className="container-fluid">
                     <picture id="header-logo">     
-                        <source srcSet="./assets/images/logo.webp" type="image/webp"/>
-                        <img src="./assets/images/logo.png" alt="Levi Stark with an electric guitar"/> 
+                        <source srcSet={logo} type="image/webp"/>
+                        <img src={logoFallback} alt="Levi Stark with an electric guitar"/> 
                     </picture>       
                     <div className='header-nav'>
                         <a href="#welcome">Welcome</a>

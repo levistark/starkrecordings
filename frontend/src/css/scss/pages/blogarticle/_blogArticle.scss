@@ -1,0 +1,55 @@
+#blog-article {
+    padding: 4rem 0;
+    .container {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+
+        max-width: 80ch;
+
+        .article-metadata {
+            display: flex;
+            justify-content: space-between;
+            font-size: 10pt;
+            color: var(--clr-text-secondary);
+            margin-bottom: -2rem;
+        }
+
+        picture {
+            img {
+                object-fit: cover;
+                height: 100%;
+                width: 100%;
+            }
+        }
+
+        .article-content {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+
+            ol {
+                display: flex;
+                flex-direction: column;
+                gap: 1rem;
+
+                li {
+                    font-size: 15pt;
+                    a {
+                        font-size: 15pt;
+                    }
+                    p {
+                        margin-top: .5rem;
+                        font-size: 12pt;
+                    }
+                }
+            }
+        }
+
+        .faq {
+            p {
+                margin-bottom: 1rem;
+            }
+        }
+    }
+}
