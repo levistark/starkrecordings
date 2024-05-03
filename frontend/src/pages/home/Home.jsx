@@ -1,11 +1,12 @@
 import React from 'react'
 import Header from '../../components/Header'
 import Footer from '../../components/Footer'
+import { Link } from 'react-router-dom'
 
 export const Home = () => {
   return (
     <>
-        <Header/>
+        <Header isSticky={true} isVisibleOnTop={false}/>
         <main>
             <section id="showcase" className="page-section">
                 <picture id="showcase-background-image">     
@@ -23,10 +24,10 @@ export const Home = () => {
                         <h1>I want to help you release the sound of your heart</h1>
                         <div className="showcase-nav-container">
                             <nav className="showcase-nav">
-                                <a href="#welcome">Welcome</a>
-                                <a href="#production">What I Do</a>
-                                <a href="#about">Aboue Me</a>
-                                <a href="#contact">Contact</a>
+                                <Link to='/#welcome'>Welcome</Link>
+                                <Link to='/#production'>What I Do</Link>
+                                <Link to='/#about'>About Me</Link>
+                                <Link to='/#contact'>Contact</Link>
                             </nav>
                         </div>
                     </div>

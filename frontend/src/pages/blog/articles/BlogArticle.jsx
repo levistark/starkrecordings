@@ -1,11 +1,12 @@
 import React from 'react'
 import Header from '../../../components/Header'
 import Footer from '../../../components/Footer'
+import Popup from '../../../components/Popup'
 
 const BlogArticle = () => {
   return (
     <>
-        <Header/>
+        <Header isSticky={true} isVisibleOnTop={true}/>
         <main id="blog-article">
             <article className="container">
 
@@ -179,7 +180,7 @@ const BlogArticle = () => {
                 </div>
             </article>
         </main>
-        
+        <Popup/>
         <Footer/>
     </>
   )

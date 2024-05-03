@@ -6,10 +6,9 @@ import logoTextFallback from '../../public/assets/images/logo-text.png'
 import { Link } from 'react-router-dom'
 import Navbar from './Navbar'
 
-const Header = () => {
+const Header = ({isSticky, isVisibleOnTop}) => {
     const [scrollState, setScrollState] = useState(0)
     const [lastScrollState, setLastScrollState] = useState(0)
-    const body = document.body;
     const [isOpen, setIsOpen] = useState(false);
     const [scrollDirection, setScrollDirection] = useState('');
 
@@ -18,7 +17,7 @@ const Header = () => {
     }
     
     useEffect(() => {
-        const handleScroll = () => {
+        function handleScroll() {
           setScrollState(window.scrollY);
         };
     
@@ -33,7 +32,7 @@ const Header = () => {
     }, [scrollState]);
 
     function handleHeaderOnScroll() {
-        if (window.screen.width > 767) {
+        if (window.screen.width > 767 && isSticky) {
           if (scrollState <= 0) {
             setScrollDirection('');
             return;
@@ -49,7 +48,7 @@ const Header = () => {
 
   return (
     <>
-        <header id="header" className={`header ${scrollDirection}`}>
+        <header id="header" className={`header ${scrollDirection} ${isVisibleOnTop ? 'isVisibleOnTop' : ''}`}>
             <div className="top-header container">
                 <div className='logo'>
                     <picture id="header-logo">     
