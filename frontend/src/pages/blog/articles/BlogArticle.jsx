@@ -180,7 +180,7 @@ const BlogArticle = () => {
                 </div>
             </article>
         </main>
-        <Popup/>
+        <Popup delayTime={15000}/>
         <Footer/>
     </>
   )

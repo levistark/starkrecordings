@@ -2,31 +2,35 @@ import React, { useState, useEffect } from 'react'
 import PopupImage from '../../public/assets/images/Piano2.webp'
 import PopupImageFallback from '../../public/assets/images/Piano2.jpg'
 
-const Popup = () => {
+const Popup = ({delayTime}) => {
     const [errorMessage, setErrorMessage] = useState('')
-    const [isClosed, setIsClosed] = useState(false)
+    const [showPopup, setShowPopup] = useState(false)
     const [email, setEmail] = useState('')
     const [isValidEmail, setIsValidEmail] = useState(false)
 
     useEffect(() => {
-        validateForm()
-    }, [email])
+        const timer = setTimeout(() => {
+        setShowPopup(true);
+      }, delayTime);
 
-    function closePopup() {
-        setIsClosed(!isClosed)
+   return () => clearTimeout(timer);
+   }, []);
+    
+    function handlePopup() {
+        setShowPopup(!showPopup)
     }
 
     function validateEmail() {
         if (!(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email))) {
             setErrorMessage('Your email address was not valid, please try again.')
+            setIsValidEmail(false)
+
         } else {
             setErrorMessage('')
+            setIsValidEmail(true)
         }
     }
 
-    function validateForm() {
-        
-    }
     
     async function handleSubmit(e) {
         e.preventDefault()
@@ -54,10 +58,10 @@ const Popup = () => {
     }
 
   return (
-    <div id='popup'>  
+    <div id='popup' className={`${showPopup === false ? 'close-popup' : ''}`}>  
         <div className='wrapper'>
             <div className='container'>
-                <button type="button" className="closeButton" aria-label="Close" onClick={closePopup}></button>
+                <button type="button" className="closeButton" aria-label="Close" onClick={handlePopup}></button>
 
                 <picture className="popup-background-image">     
                     <source srcSet={PopupImage} type="image/webp"/>
@@ -66,15 +70,29 @@ const Popup = () => {
                 
                 <div className='popup-text-content'>
                     <p className='h2'>Hey, are you a songwriter?</p>
-                    <p className='paragraph'>Me to! I would love to connect and help you with your songs, whether you need feedback, tips on how to record a demo, or just chat about your music, just fill in your email below and I'll reach out!</p>
+                    <p className='paragraph'>Me too! I would love to connect and help you with your songs, whether you need feedback, tips on how to record a demo, or just chat about your music, just fill in your email below and I'll reach out!</p>
                 </div>
                 
                 <form className='popup-form' onSubmit={handleSubmit}>
-                    <input className="form-control" id="email" placeholder="name@example.com" aria-describedby="emailHelpBlock" name='email' required value={email} onKeyUp={validateEmail} onChange={(e) => setEmail(e.target.value)}/>
-                        <button type="submit" className="btn btn-primary">Submit</button>
-                        <div id="emailHelpBlock" className="form-text">
-                            {errorMessage}
-                        </div>
+                    <input 
+                        className={`form-control ${isValidEmail === false ? 'invalid-input' : ''}`}
+                        
+                        id="email" 
+                        placeholder="name@example.com" 
+                        aria-describedby="emailHelpBlock" 
+                        name='email' 
+                        value={email} 
+                        onKeyUp={validateEmail} 
+                        onChange={(e) => setEmail(e.target.value)}
+                        noValidate
+                        />
+                        <button type="submit" className="btn btn-primary" disabled={!isValidEmail}>Submit</button>
+                        {
+                            isValidEmail ? null : 
+                                <div id="emailHelpBlock" className="form-text">
+                                    {errorMessage}
+                                </div>
+                        }
                 </form>
             </div>
         </div>
