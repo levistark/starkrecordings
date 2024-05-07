@@ -1,17 +1,18 @@
-import React, {useEffect} from 'react'
+import React, {useState, useEffect} from 'react'
 import Header from '../../components/Header'
 import Footer from '../../components/Footer'
 import { Link } from 'react-router-dom'
 
 export const Home = () => {
 
-    
-    
-    async function fetchMessage() {
-        const result = await fetch(`/api/message`)
-        const json = await result.json()
-        console.log(json)
-    }
+    const [data, setData] = useState('');
+
+    useEffect(() => {
+        (async function () {
+        const {text} = await( await fetch(`/api/message`)).json();
+        setData(text);
+        })();
+    });
 
   return (
     <>
