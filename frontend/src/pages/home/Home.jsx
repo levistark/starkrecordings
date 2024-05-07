@@ -1,9 +1,18 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import Header from '../../components/Header'
 import Footer from '../../components/Footer'
 import { Link } from 'react-router-dom'
 
 export const Home = () => {
+
+    
+    
+    async function fetchMessage() {
+        const result = await fetch(`/api/message`)
+        const json = await result.json()
+        console.log(json)
+    }
+
   return (
     <>
         <Header isSticky={true} isVisibleOnTop={false}/>

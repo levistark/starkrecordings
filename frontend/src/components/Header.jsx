@@ -50,23 +50,23 @@ const Header = ({isSticky, isVisibleOnTop}) => {
     <>
         <header id="header" className={`header ${scrollDirection} ${isVisibleOnTop ? 'isVisibleOnTop' : ''}`}>
             <div className="top-header container">
-                <div className='logo'>
-                    <picture id="header-logo">     
-                        <source srcSet={logo} type="image/webp"/>
-                        <img src={logoFallback} alt="Levi Stark with an electric guitar"/> 
-                    </picture>   
-
-                    <picture id="header-logo-text">     
-                        <source srcSet={logoText} type="image/webp"/>
-                        <img src={logoTextFallback} alt="Levi Stark with an electric guitar"/> 
-                    </picture>   
-                </div>
-                
+                <Link to="/" className='logo'>
+                  <picture id="header-logo">     
+                      <source srcSet={logo} type="image/webp"/>
+                      <img src={logoFallback} alt="Levi Stark with an electric guitar"/> 
+                  </picture>   
+                  <picture id="header-logo-text">     
+                      <source srcSet={logoText} type="image/webp"/>
+                      <img src={logoTextFallback} alt="Levi Stark with an electric guitar"/> 
+                  </picture>   
+                </Link>
+                    
                 <nav className='header-nav'>
                     <Link to='/#welcome'>Welcome</Link>
                     <Link to='/#production'>What I Do</Link>
                     <Link to='/#about'>About Me</Link>
                     <Link to='/#contact'>Contact</Link>
+                    <Link to='/posts/playlists2023'>Blog</Link>
                 </nav>
 
                 <div className="navbar-toggle" onClick={toggleMenu}>
