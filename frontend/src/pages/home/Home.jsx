@@ -4,16 +4,6 @@ import Footer from '../../components/Footer'
 import { Link } from 'react-router-dom'
 
 export const Home = () => {
-
-    const [data, setData] = useState('');
-
-    useEffect(() => {
-        (async function () {
-        const {text} = await( await fetch(`/api/message`)).json();
-        setData(text);
-        })();
-    });
-
   return (
     <>
         <Header isSticky={true} isVisibleOnTop={false}/>

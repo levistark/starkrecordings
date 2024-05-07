@@ -2,6 +2,8 @@ import React from 'react'
 import Header from '../../../components/Header'
 import Footer from '../../../components/Footer'
 import Popup from '../../../components/Popup'
+import RobotPlayerImage from '../../../../public/assets/images/Robot-player.webp'
+import RobotPlayerImageFallback from '../../../../public/assets/images/Robot-player.jpg'
 
 const BlogArticle = () => {
   return (
@@ -18,8 +20,8 @@ const BlogArticle = () => {
                 </div>
 
                 <picture id="showcase-background-image">     
-                    <source srcSet="../../../../public/assets/images/Robot-player.webp" type="image/webp"/>
-                    <img src="../../../../public/assets/images/Robot-player.jpg" alt="A robot listening to Spotify"/> 
+                    <source srcSet={RobotPlayerImage} type="image/webp"/>
+                    <img src={RobotPlayerImageFallback} alt="A robot listening to Spotify"/> 
                 </picture>
 
                 <div className='article-content'>
