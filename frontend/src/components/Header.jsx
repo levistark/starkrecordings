@@ -9,21 +9,40 @@ import Navbar from './Navbar'
 const Header = ({isSticky, isVisibleOnTop}) => {
     const [scrollState, setScrollState] = useState(0)
     const [lastScrollState, setLastScrollState] = useState(0)
-    const [isOpen, setIsOpen] = useState(false);
+    const [navbarState, setNavbarState] = useState(false);
     const [scrollDirection, setScrollDirection] = useState('');
+    const [maxWidth, setMaxWidth] = useState(false)
 
     function toggleMenu() {
-        setIsOpen(!isOpen);
+      setNavbarState(!navbarState)
     }
-    
+
     useEffect(() => {
+
+      if (window.screen.width < 768) {
+        setMaxWidth(true)
+      }
+
         function handleScroll() {
           setScrollState(window.scrollY);
         };
+
+        function handleScreenRezise() {
+          if (window.screen.width < 768) {
+            setMaxWidth(true)
+          }
+          else {
+            setMaxWidth(false)
+          }
+        }
     
         window.addEventListener('scroll', handleScroll);
+        window.addEventListener('resize', handleScreenRezise);
+
         return () => {
           window.removeEventListener('scroll', handleScroll);
+          window.removeEventListener('resize', handleScreenRezise);
+
         };
       }, []);
 
@@ -49,7 +68,7 @@ const Header = ({isSticky, isVisibleOnTop}) => {
   return (
     <>
         <header id="header" className={`header ${scrollDirection} ${isVisibleOnTop ? 'isVisibleOnTop' : ''}`}>
-            <div className="top-header container">
+            <div className={`top-header ${maxWidth ? '' : 'container'}`}>
                 <Link to="/" className='logo'>
                   <picture id="header-logo">     
                       <source srcSet={logo} type="image/webp"/>
@@ -75,7 +94,7 @@ const Header = ({isSticky, isVisibleOnTop}) => {
                     <div></div>
                 </div>
             </div>
-            <Navbar isOpen={isOpen} toggleMenu={toggleMenu}/>
+            <Navbar navbarState={navbarState} toggleMenu={toggleMenu} />
         </header>
     </>
   )

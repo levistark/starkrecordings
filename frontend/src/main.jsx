@@ -3,7 +3,8 @@ import ReactDOM from 'react-dom/client'
 import App from './App.jsx'
 import AutoScrollToTop from './utill/AutoScrollToTop.jsx'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
-import BlogArticle from './pages/blog/articles/BlogArticle.jsx'
+import BlogArticle2023 from './pages/blog/articles/BlogArticle2023.jsx'
+import BlogArticle2024 from './pages/blog/articles/BlogArticle2024.jsx'
 import BlogPosts from './pages/blog/BlogPosts.jsx'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
@@ -13,8 +14,8 @@ ReactDOM.createRoot(document.getElementById('root')).render(
       <Routes>
         <Route path='/' element={<App/>}/>
         <Route path='/posts' element={<BlogPosts/>}/>
-        <Route path='/posts/playlists2023' element={<BlogArticle/>}/>
-        <Route path='/posts/playlists2024' element={<BlogArticle/>}/>
+        <Route path='/posts/playlists2023' element={<BlogArticle2023/>}/>
+        <Route path='/posts/playlists2024' element={<BlogArticle2024/>}/>
       </Routes>
     </BrowserRouter>
   </React.StrictMode>,

@@ -17,7 +17,7 @@
         justify-content: space-between;
         padding: .65rem 1rem;
 
-        @include sm {
+        @include md {
             padding: .65rem 0;
         }
         .logo {
@@ -80,7 +80,7 @@
                 gap: 7rem;
             }
         }
-
+        
         .navbar-toggle {
             display: flex;
             flex-direction: column;
@@ -103,6 +103,10 @@
         }
     }
     #navbar {
+        @include md {
+            display: none;
+        }
+
         .flyin-backdrop {
             position: absolute;
             top: 0;
@@ -111,10 +115,6 @@
             height: 100vh;
             background-color: rgba(0, 0, 0, 0.579);
             transition: all 0.5s;
-    
-            @include md {
-                display: none;
-            }
         }
         .flyin-menu {
             position: absolute;

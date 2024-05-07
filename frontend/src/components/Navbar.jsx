@@ -5,12 +5,19 @@ import logoText from '../../public/assets/images/logo-text.webp'
 import logoTextFallback from '../../public/assets/images/logo-text.png'
 import { Link } from 'react-router-dom'
 
-const Navbar = ({ isOpen, toggleMenu }) => {
-    
+const Navbar = ({ navbarState, toggleMenu }) => {
+    const [style, setStyle] = useState('d-none')
+
+    useEffect(() => {
+        if (navbarState) {
+            setStyle('')
+        }
+    }, [toggleMenu])
+
   return (
-    <div id='navbar'>
-        <div onClick={toggleMenu} className={`flyin-backdrop ${isOpen ? 'showBackdrop' : 'hideBackdrop'}`}></div>
-        <div className={`flyin-menu ${isOpen ? 'showMenu' : 'hideMenu'}`} tabIndex="-1">
+    <div id='navbar' className={style}>
+        <div onClick={toggleMenu} className={`flyin-backdrop ${navbarState ? 'showBackdrop' : 'hideBackdrop'}`}></div>
+        <div className={`flyin-menu ${navbarState ? 'showMenu' : 'hideMenu'}`} tabIndex="-1">
             <div className="flyin-header">
                 <div className='flyin-logo-container'>
                     <picture id="flyin-logo">     
