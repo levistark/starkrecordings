@@ -6,9 +6,9 @@
     "start": "func start",
     "test": "echo \"No tests yet...\""
   },
-  "dependencies": {},
+  "dependencies": {
+    "@azure/functions": "^4.0.0"
+  },
   "devDependencies": {},
-  "engines": {
-    "node": ">=18.0.0"
-}
+  "main": "src/functions/*.js"
 }
