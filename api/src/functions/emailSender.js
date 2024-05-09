@@ -1,16 +1,6 @@
 const { app } = require('@azure/functions');
 const { EmailClient, KnownEmailSendStatus } = require("@azure/communication-email");
 
-/*
-            
-    Denna Function lyssnar på 'email-optin'-kön i från Azure Service Bus, och hämtar
-    meddelanden från denna kö.
-
-    Den ska sedan skicka iväg en request via sendEmail() till Azure Communication Service
-    som i sin tur skickar iväg ett välkomstmejl till användaren
-                
-*/
-
 // Initializing function binding to queue
 app.serviceBusQueue('emailSender', {
     connection: 'AzureServiceBus',
