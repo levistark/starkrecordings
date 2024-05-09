@@ -36,20 +36,26 @@ const Popup = ({delayTime}) => {
         e.preventDefault()
 
         if ((/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email))) {
-            const API_URL = 'http://localhost:4280/api/emailOptInTrigger'
+            const API_URL = 'https://emailprovider-starkrecordings.azurewebsites.net/api/emailOptInTrigger?code=HqHNiD8fyFfsf8AhDiVykkF17ZOSaVunvvAz2663kBsfAzFu4K2Apw=='
+            const LOCAL_API_URL = `/api/emailOptInTrigger`
             
-            const result = await fetch(API_URL, {
-                method: 'post',
-                headers: {
-                    'content-type': 'application/text',
-                },
-                body: email
-            })
+            try {
+                const result = await fetch(API_URL, {
+                    method: 'post',
+                    headers: {
+                        'content-type': 'application/text', 
+                    },
+                    body: email
+                })
+            } catch (error) {
+                console.error(error.errorMessage)
+            }
+            
             setSubmitMessage('Thanks for your message!')
 
             setTimeout(() => {
                 setShowPopup(false);
-            }, 1700);
+            }, 2500);
         } 
     }
 
