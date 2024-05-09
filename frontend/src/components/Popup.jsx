@@ -7,11 +7,12 @@ const Popup = ({delayTime}) => {
     const [showPopup, setShowPopup] = useState(false)
     const [email, setEmail] = useState('')
     const [isValidEmail, setIsValidEmail] = useState(false)
+    const [submitMessage, setSubmitMessage] = useState('')
 
     useEffect(() => {
         const timer = setTimeout(() => {
         setShowPopup(true);
-      }, delayTime);
+      }, 100);
 
    return () => clearTimeout(timer);
    }, []);
@@ -30,31 +31,26 @@ const Popup = ({delayTime}) => {
             setIsValidEmail(true)
         }
     }
-
     
     async function handleSubmit(e) {
         e.preventDefault()
 
-        // const user = {name, email, message}
-        // const json = JSON.stringify(user)
+        if ((/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email))) {
+            const API_URL = 'http://localhost:4280/api/emailOptInTrigger'
+            
+            const result = await fetch(API_URL, {
+                method: 'post',
+                headers: {
+                    'content-type': 'application/text',
+                },
+                body: email
+            })
+            setSubmitMessage('Thanks for your message!')
 
-        // const result = await fetch('https://win23-assignment.azurewebsites.net/api/contactform', {
-        //     method: 'post',
-        //     headers: {
-        //         'content-type': 'application/json',
-        //     },
-        //     body: json
-        // })
-        // switch (result.status) {
-        //     case 200: 
-        //         setSubmitMessage('Thanks for your message!')
-        //         console.log(result)
-        //         break
-        //     case !200:
-        //         setSubmitMessage('Something went wrong. Please contact our IT-department.')
-        //         console.log(result)
-        //         break
-        // }
+            setTimeout(() => {
+                setShowPopup(false);
+            }, 1700);
+        } 
     }
 
   return (
@@ -87,12 +83,9 @@ const Popup = ({delayTime}) => {
                         noValidate
                         />
                         <button type="submit" className="btn btn-primary" disabled={!isValidEmail}>Submit</button>
-                        {
-                            isValidEmail ? null : 
-                                <div id="emailHelpBlock" className="form-text">
-                                    {errorMessage}
-                                </div>
-                        }
+                        <div id="emailHelpBlock" className="form-text">
+                            {errorMessage + submitMessage}
+                        </div>
                 </form>
             </div>
         </div>

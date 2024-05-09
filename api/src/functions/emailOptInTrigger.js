@@ -14,7 +14,8 @@ app.http('emailOptInTrigger', {
                 // Storing email to a Google Sheet
 
                 // Sending an email via Azure Communication
-                const result = await sendEmail(email)
+                //const result = await sendEmail(email)
+                return { status: 204}
 
                 if (result.status === 204) 
                     return { status: 204}
