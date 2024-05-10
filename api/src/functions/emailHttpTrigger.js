@@ -5,12 +5,16 @@ app.http('emailHttpTrigger', {
     methods: ['POST'],
     authLevel: 'anonymous',
     handler: async (request, context) => {
-        return;
         const email = await request.text()
         
         if (email !== "" && email !== null) {
             const sbConnectionString = process.env['AzureServiceBus']
             const sbClient = new ServiceBusClient(sbConnectionString);
+
+            // Ta bort dessa två rader sen
+            await sbClient.close();
+            return;
+            
             const queueName = 'email-optin'
             const sender = sbClient.createSender(queueName);
             const message = { body: email }
