@@ -1,32 +1,20 @@
-const { app } = require('@azure/functions');
-const { ServiceBusClient } = require("@azure/service-bus");
+const { app, output } = require('@azure/functions');
+
+const serviceBusOutput = output.serviceBusQueue({
+    queueName: 'email-optin',
+    connection: 'ServiceBus',
+});
 
 app.http('emailHttpTrigger', {
     methods: ['POST'],
     authLevel: 'anonymous',
+    output: serviceBusOutput,
+    return: serviceBusOutput,
     handler: async (request, context) => {
         const email = await request.text()
-        
+
         if (email !== "" && email !== null) {
-            const sbConnectionString = process.env['AzureServiceBus']
-            const sbClient = new ServiceBusClient(sbConnectionString);
-
-            // Ta bort dessa två rader sen
-            await sbClient.close();
-            return;
-            
-            const queueName = 'email-optin'
-            const sender = sbClient.createSender(queueName);
-            const message = { body: email }
-
-            try {
-                await sender.sendMessages(message);
-                await sender.close();
-            } catch (error) {
-                console.error(`An error occurred: ${error.message}`);
-            } finally {
-                await sbClient.close();
-            }
+            return email
         }
     }
-});
+}); 
