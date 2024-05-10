@@ -12,7 +12,7 @@ const Popup = ({delayTime}) => {
     useEffect(() => {
         const timer = setTimeout(() => {
         setShowPopup(true);
-      }, 100);
+      }, delayTime);
 
    return () => clearTimeout(timer);
    }, []);
