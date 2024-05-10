@@ -12,7 +12,7 @@ const Popup = ({delayTime}) => {
     useEffect(() => {
         const timer = setTimeout(() => {
         setShowPopup(true);
-      }, delayTime);
+      }, 100);
 
    return () => clearTimeout(timer);
    }, []);
@@ -36,9 +36,7 @@ const Popup = ({delayTime}) => {
         e.preventDefault()
 
         if ((/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email))) {
-            const API_URL = 'https://emailprovider-starkrecordings.azurewebsites.net/api/emailOptInTrigger?code=HqHNiD8fyFfsf8AhDiVykkF17ZOSaVunvvAz2663kBsfAzFu4K2Apw=='
-            const LOCAL_API_URL = `/api/emailOptInTrigger`
-            
+            const API_URL = `/api/emailHttpTrigger`
             try {
                 const result = await fetch(API_URL, {
                     method: 'post',
@@ -47,6 +45,7 @@ const Popup = ({delayTime}) => {
                     },
                     body: email
                 })
+
             } catch (error) {
                 console.error(error.errorMessage)
             }
