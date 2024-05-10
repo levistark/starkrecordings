@@ -13,7 +13,7 @@ const Popup = ({delayTime}) => {
         const timer = setTimeout(() => {
         setShowPopup(true);
       }, delayTime);
-
+      
    return () => clearTimeout(timer);
    }, []);
     
