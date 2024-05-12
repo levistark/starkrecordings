@@ -8,13 +8,10 @@ const serviceBusOutput = output.serviceBusQueue({
 app.http('emailHttpTrigger', {
     methods: ['POST'],
     authLevel: 'anonymous',
-    output: serviceBusOutput,
-    return: serviceBusOutput,
+    return: sbOutput,
     handler: async (request, context) => {
         const email = await request.text()
-
-        if (email !== "" && email !== null) {
+        if ((/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email))) 
             return email
-        }
     }
 }); 
