@@ -1,6 +1,6 @@
 const { app, output } = require('@azure/functions');
 
-const serviceBusOutput = output.serviceBusQueue({
+const sbOutput = output.serviceBusQueue({
     queueName: 'email-optin',
     connection: 'ServiceBus',
 });
