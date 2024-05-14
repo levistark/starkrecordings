@@ -13,9 +13,9 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     <AutoScrollToTop />
       <Routes>
         <Route path='/' element={<App/>}/>
-        <Route path='/posts' element={<BlogPosts/>}/>
-        <Route path='/posts/playlists2023' element={<BlogArticle2023/>}/>
-        <Route path='/posts/playlists2024' element={<BlogArticle2024/>}/>
+        <Route path='/post' element={<BlogPosts/>}/>
+        <Route path='/post/playlists2023' element={<BlogArticle2023/>}/>
+        <Route path='/post/playlists2024' element={<BlogArticle2024/>}/>
       </Routes>
     </BrowserRouter>
   </React.StrictMode>,

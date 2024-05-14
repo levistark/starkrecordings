@@ -6,13 +6,20 @@ import RobotPlayerImage from '../../../../public/assets/images/Robot-player.webp
 import RobotPlayerImageFallback from '../../../../public/assets/images/Robot-player.jpg'
 
 const BlogArticle2023 = () => {
+    useEffect(() => {
+        document.title = 'The Best Spotify Playlist Submission Sites - The Ultimate List of 2023';
+        const metaDescriptionTag = document.querySelector('meta[name="description"]');
+        if (metaDescriptionTag) {
+          metaDescriptionTag.content = 'Discover the top free and paid Spotify playlist submission sites for 2023. Get your music heard by a wider audience and boost your Spotify presence with this comprehensive guide.';
+        }
+      }, []); 
   return (
     <>
         <Header isSticky={true} isVisibleOnTop={true}/>
         <main id="blog-article">
             <article className="container asd">
 
-                <h1 className='article-title'>The Best Spotify Playlist Submission Sites - The Ultimate List of 2024</h1>
+                <h1 className='article-title'>The Best Spotify Playlist Submission Sites - The Ultimate List of 2023</h1>
 
                 <div className='article-metadata'>
                     <time className='publish-date'>12-12-2023</time>
@@ -141,7 +148,7 @@ const BlogArticle2023 = () => {
                         Conclusion
                     </p>
                     <p>
-                        Getting your music on a popular Spotify playlist can be a game-changer for independent artists. While it can be challenging to get noticed by playlist curators, using a variety of playlist submission sites can increase your chances of playlist placement. The above list provides a comprehensive list of the top Spotify playlist submission sites for 2024. Whether you're looking for a free or paid option, there's a site on this list that can help you get noticed and increase your exposure to a wider audience.
+                        Getting your music on a popular Spotify playlist can be a game-changer for independent artists. While it can be challenging to get noticed by playlist curators, using a variety of playlist submission sites can increase your chances of playlist placement. The above list provides a comprehensive list of the top Spotify playlist submission sites for 2023. Whether you're looking for a free or paid option, there's a site on this list that can help you get noticed and increase your exposure to a wider audience.
                     </p>
                     <p className="h3">
                         FAQs

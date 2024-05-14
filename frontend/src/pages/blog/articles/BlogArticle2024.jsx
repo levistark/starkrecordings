@@ -6,6 +6,13 @@ import RobotPlayerImage from '../../../../public/assets/images/Robot-player.webp
 import RobotPlayerImageFallback from '../../../../public/assets/images/Robot-player.jpg'
 
 const BlogArticle2024 = () => {
+    useEffect(() => {
+        document.title = 'The Best Spotify Playlist Submission Sites - The Ultimate List of 2024';
+        const metaDescriptionTag = document.querySelector('meta[name="description"]');
+        if (metaDescriptionTag) {
+          metaDescriptionTag.content = 'Discover the top free and paid Spotify playlist submission sites for 2024. Get your music heard by a wider audience and boost your Spotify presence with this comprehensive guide.';
+        }
+      }, []); 
   return (
     <>
         <Header isSticky={true} isVisibleOnTop={true}/>
