@@ -9,7 +9,7 @@ This is the website for my freelancing music production company Stark Recordings
 * Azure Static Web App hosting
 
 ## What's next in line
-* Set up a databsae in the cloud (PostgresSQL) for storing email subscribers
+* Set up a databsae in the cloud (PostgreSQL) for storing email subscribers
 * Hook up database with API
 * Set up automations 
   
