@@ -1,5 +1,5 @@
 # Stark Recordings
-Stark Recordings' website
+This is the website for my freelancing music production company Stark Recordings.
 
 ## Technologies used
 * React app with Vite (Vanilla JS)
